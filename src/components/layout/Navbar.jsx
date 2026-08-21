@@ -78,7 +78,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button to="/contact" variant="primary" className="px-6 py-2.5 text-base">
+          <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary" className="px-6 py-2.5 text-base">
             Book a Demo
           </Button>
         </div>
@@ -114,7 +114,7 @@ export function Navbar() {
                 </a>
               ))}
               <div className="mt-3 flex flex-col gap-2">
-                <Button to="/contact" variant="primary" className="w-full text-base">
+                <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary" className="w-full text-base">
                   Book a Demo
                 </Button>
               </div>

@@ -9,6 +9,7 @@ import { FinancialSolutions } from '../components/sections/FinancialSolutions'
 import { Security } from '../components/sections/Security'
 import { FAQ } from '../components/sections/FAQ'
 import { FinalCTA } from '../components/sections/FinalCTA'
+import back2 from '../assets/back2.png'
 
 export function Home() {
   const location = useLocation()
@@ -27,8 +28,13 @@ export function Home() {
       <Hero />
       <TrustedPartner />
       <SolutionsSuite />
-      <Integrations />
-      <Industries />
+      <div className="relative overflow-hidden bg-navy bg-cover bg-center" style={{ backgroundImage: `url(${back2})` }}>
+        <div className="absolute inset-0 bg-navy/95" />
+        <div className="relative">
+          <Integrations />
+          <Industries />
+        </div>
+      </div>
       <FinancialSolutions />
       <Security />
       <FAQ />

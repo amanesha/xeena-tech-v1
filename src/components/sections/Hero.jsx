@@ -43,7 +43,7 @@ export function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button to="/contact" variant="primary">
+            <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary">
               Book a Demo
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Button>

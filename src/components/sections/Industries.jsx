@@ -2,7 +2,6 @@ import { Rocket, Building2, Store, Briefcase, Landmark } from 'lucide-react'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Card, IconBadge } from '../ui/Card'
 import { StaggerGroup, StaggerItem } from '../ui/Reveal'
-import back2 from '../../assets/back2.png'
 
 const industries = [
   {
@@ -34,12 +33,7 @@ const industries = [
 
 export function Industries() {
   return (
-    <section
-      className="relative bg-navy bg-cover bg-center py-24"
-      style={{ backgroundImage: `url(${back2})` }}
-    >
-      <div className="absolute inset-0 bg-navy/95" />
-
+    <section className="relative py-24">
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           dark

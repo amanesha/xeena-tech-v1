@@ -2,6 +2,7 @@ import { Calculator, Users, ShoppingCart, MessageSquare, Cloud, Plug } from 'luc
 import { SectionHeading } from '../ui/SectionHeading'
 import { Card, IconBadge } from '../ui/Card'
 import { StaggerGroup, StaggerItem } from '../ui/Reveal'
+import back2 from '../../assets/back2.png'
 
 const categories = [
   { icon: Calculator, label: 'Accounting Platforms' },
@@ -14,7 +15,11 @@ const categories = [
 
 export function Integrations() {
   return (
-    <section className="relative overflow-hidden bg-navy py-24">
+    <section
+      className="relative overflow-hidden bg-navy bg-cover bg-center py-24"
+      style={{ backgroundImage: `url(${back2})` }}
+    >
+      <div className="absolute inset-0 bg-navy/95" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/[0.06] blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">

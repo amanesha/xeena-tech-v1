@@ -78,11 +78,13 @@ export function Contact() {
             <h2 className="text-xl font-bold text-navy">Why reach out</h2>
             <div className="mt-6 space-y-4">
               {reasons.map((r) => (
-                <Card key={r.title} className="flex flex-row items-start gap-4 p-5">
-                  <IconBadge icon={r.icon} />
-                  <div>
-                    <h3 className="text-sm font-bold text-white">{r.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-white/70">{r.desc}</p>
+                <Card key={r.title} className="p-5">
+                  <div className="flex flex-row items-start gap-4">
+                    <IconBadge icon={r.icon} />
+                    <div>
+                      <h3 className="text-sm font-bold text-white">{r.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-white/70">{r.desc}</p>
+                    </div>
                   </div>
                 </Card>
               ))}

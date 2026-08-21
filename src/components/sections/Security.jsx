@@ -1,6 +1,8 @@
-import { ShieldCheck, CheckCircle2 } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 import { motion } from 'motion/react'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import { Reveal, StaggerGroup, StaggerItem } from '../ui/Reveal'
+import securityLottie from '../../assets/pW2HrfBahk.lottie'
 
 const items = [
   'Data Encryption',
@@ -41,7 +43,7 @@ export function Security() {
           </Reveal>
 
           <Reveal className="relative flex items-center justify-center">
-            <div className="relative flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80">
+            <div className="relative flex h-80 w-80 items-center justify-center sm:h-[26rem] sm:w-[26rem]">
               {[0, 1, 2].map((i) => (
                 <motion.span
                   key={i}
@@ -56,8 +58,8 @@ export function Security() {
                 />
               ))}
               <div className="absolute h-full w-full rounded-full bg-navy/[0.03]" />
-              <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-navy shadow-lg shadow-navy/20">
-                <ShieldCheck size={52} className="text-gold" strokeWidth={1.6} />
+              <div className="relative flex h-64 w-64 items-center justify-center sm:h-80 sm:w-80">
+                <DotLottieReact src={securityLottie} loop autoplay />
               </div>
             </div>
           </Reveal>

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { Lock } from 'lucide-react'
 import logo from '../../assets/xeena-logo.png'
 
 const links = [
@@ -32,9 +31,8 @@ export function Footer() {
               {links.map((link) =>
                 link.locked ? (
                   <li key={link.label}>
-                    <span className="inline-flex cursor-not-allowed items-center gap-1.5 text-sm text-white/35">
+                    <span className="cursor-not-allowed text-sm text-white/35">
                       {link.label}
-                      <Lock size={12} />
                     </span>
                   </li>
                 ) : (

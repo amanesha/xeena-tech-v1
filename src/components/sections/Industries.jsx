@@ -47,7 +47,7 @@ export function Industries() {
           title="Technology for Every Kind of Business."
         />
 
-        <StaggerGroup className="mt-14 flex flex-wrap justify-center gap-5">
+        <StaggerGroup className="mt-20 flex flex-wrap justify-center gap-5">
           {industries.map((ind) => (
             <StaggerItem
               key={ind.title}

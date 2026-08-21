@@ -16,7 +16,7 @@ export function SectionHeading({ eyebrow, title, subtitle, dark = false, classNa
       )}
       <h2
         className={cn(
-          'mt-3 text-4xl font-bold tracking-tight md:text-5xl',
+          'mt-3 text-4xl font-bold leading-tight tracking-tight md:text-5xl',
           dark ? 'text-white' : 'text-navy'
         )}
       >

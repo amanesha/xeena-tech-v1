@@ -20,7 +20,7 @@ export function Hero() {
       {/* ambient glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-gold/[0.07] blur-[120px]" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 pb-24 pt-20 lg:grid-cols-2 lg:px-8 lg:pb-32 lg:pt-28">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 pb-24 pt-32 lg:grid-cols-2 lg:px-8 lg:pb-32 lg:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

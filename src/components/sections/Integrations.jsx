@@ -28,9 +28,11 @@ export function Integrations() {
         <StaggerGroup className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {categories.map((c) => (
             <StaggerItem key={c.label}>
-              <Card className="flex flex-col items-center gap-3 text-center">
-                <IconBadge icon={c.icon} />
-                <span className="text-xs font-medium leading-snug text-white/80">{c.label}</span>
+              <Card className="text-center">
+                <div className="flex flex-col items-center gap-3">
+                  <IconBadge icon={c.icon} />
+                  <span className="w-full text-xs font-medium leading-snug text-white/80">{c.label}</span>
+                </div>
               </Card>
             </StaggerItem>
           ))}

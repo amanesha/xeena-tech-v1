@@ -12,6 +12,7 @@ const legal = [
   { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms of Service', href: '/terms-of-service' },
   { label: 'Cookie Policy', href: '/cookie-policy' },
+  { label: 'Acceptable Use Policy', href: '/acceptable-use-policy' },
 ]
 
 export function Footer() {
@@ -21,7 +22,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Xeena Tech" className="h-20 w-auto object-contain" />
+              <img src={logo} alt="Xeena Tech" className="h-28 w-auto object-contain" />
             </Link>
           </div>
 

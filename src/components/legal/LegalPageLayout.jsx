@@ -5,9 +5,9 @@ import { Reveal } from '../ui/Reveal'
 export function LegalPageLayout({ title, effectiveDate, children }) {
   return (
     <div className="bg-navy">
-      <section className="relative overflow-hidden pb-10 pt-28">
+      <section className="relative overflow-hidden pb-10 pt-40">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(211,156,0,0.1)_0%,_transparent_60%)]" />
-        <Reveal className="relative mx-auto max-w-3xl px-6 lg:px-8">
+        <Reveal className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <Link
             to="/"
             className="group inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
@@ -25,8 +25,8 @@ export function LegalPageLayout({ title, effectiveDate, children }) {
       </section>
 
       <section className="pb-24">
-        <Reveal className="mx-auto max-w-3xl px-6 lg:px-8">
-          <div className="rounded-2xl border border-white/10 bg-navy-light p-6 sm:p-10">
+        <Reveal className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="rounded-2xl border border-white/10 bg-navy-light p-8 sm:p-12">
             {children}
           </div>
         </Reveal>

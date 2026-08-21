@@ -4,6 +4,7 @@ import { CheckCircle2, Clock, MessagesSquare, ShieldCheck } from 'lucide-react'
 import { Reveal } from '../components/ui/Reveal'
 import { cn } from '../lib/cn'
 import { Card, IconBadge } from '../components/ui/Card'
+import contactHero from '../assets/contactusimage.png'
 
 const reasons = [
   {
@@ -50,7 +51,12 @@ export function Contact() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-navy pb-20 pt-20 lg:pb-28 lg:pt-24">
+      <section className="relative overflow-hidden bg-navy pb-20 pt-32 lg:pb-28 lg:pt-40">
+        <div
+          className="absolute inset-x-0 bottom-0 top-[120px] bg-cover bg-center"
+          style={{ backgroundImage: `url(${contactHero})` }}
+        />
+        <div className="absolute inset-x-0 bottom-0 top-[120px] bg-navy/85" />
         <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-gold/10 blur-[120px]" />
         <Reveal className="relative mx-auto max-w-2xl px-6 text-center lg:px-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/10 px-4 py-1.5 text-xs font-semibold text-gold">

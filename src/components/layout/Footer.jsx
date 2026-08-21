@@ -22,7 +22,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Xeena Tech" className="h-28 w-auto object-contain" />
+              <img src={logo} alt="Xeena Tech" className="h-28 w-auto object-contain brightness-125 contrast-125" />
             </Link>
           </div>
 

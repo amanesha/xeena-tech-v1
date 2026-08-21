@@ -59,7 +59,7 @@ export function Navbar() {
           <img
             src={logo}
             alt="Xeena Tech"
-            className="h-24 w-auto object-contain transition-opacity group-hover:opacity-90"
+            className="h-24 w-auto object-contain brightness-125 contrast-125 transition-opacity group-hover:opacity-90"
           />
         </Link>
 

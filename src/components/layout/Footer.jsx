@@ -61,7 +61,25 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 text-xs">
+        <div className="mt-12 border-t border-white/10 pt-6 text-xs space-y-3">
+          <p className="text-white/70">
+            Legal Entity: XEENA IT INFRASTRUCTURE L.L.C | Licence Number: 1522077 | United Arab Emirates
+          </p>
+          <p>
+            Xeena Tech is a technology solutions provider offering business software, CRM, invoicing, payroll, accounting, integrations, and related technology services.
+          </p>
+          <p>
+            Xeena Tech does not directly provide banking, payment, electronic money, card, investment, or other financial services through xeena.tech. Financial solutions referenced on this website are available through the XEENA FINTECH LTD platform at xeena.io and may be provided by regulated third-party institutions or service providers.
+          </p>
+          <p>
+            Financial solutions are subject to applicable laws, eligibility, verification, AML/KYC requirements, jurisdictional restrictions, and applicable terms. Availability may vary by jurisdiction.
+          </p>
+          <p>
+            Nothing on this website constitutes financial, investment, legal, or tax advice.
+          </p>
+        </div>
+
+        <div className="mt-6 border-t border-white/10 pt-6 text-xs">
           <p>© {new Date().getFullYear()} Xeena Tech. All rights reserved.</p>
         </div>
       </div>

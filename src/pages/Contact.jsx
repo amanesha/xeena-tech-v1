@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { CheckCircle2, Clock, MessagesSquare, ShieldCheck } from 'lucide-react'
+import { CheckCircle2, Clock, Mail, MessagesSquare, Phone, ShieldCheck } from 'lucide-react'
 import { Reveal } from '../components/ui/Reveal'
 import { cn } from '../lib/cn'
 import { Card, IconBadge } from '../components/ui/Card'
@@ -32,7 +32,7 @@ export function Contact() {
     name: '',
     email: '',
     company: '',
-    reason: 'Book a Demo',
+    reason: 'General Inquiry',
     message: '',
   })
   const [status, setStatus] = useState('idle')
@@ -89,10 +89,31 @@ export function Contact() {
                 </Card>
               ))}
             </div>
+
+            <div className="mt-4 rounded-2xl border border-navy/8 bg-white p-6 shadow-sm sm:p-8">
+              <div className="flex items-center gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold-tint text-gold-hover">
+                  <Mail size={18} />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">E-mail</p>
+                  <p className="mt-0.5 text-sm font-medium text-navy">info@xeena.io</p>
+                </div>
+              </div>
+              <div className="mt-4 flex items-center gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold-tint text-gold-hover">
+                  <Phone size={18} />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">Telephone</p>
+                  <p className="mt-0.5 text-sm font-medium text-navy">+1 (437) 886-1178</p>
+                </div>
+              </div>
+            </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
-            <div className="rounded-2xl border border-navy/8 bg-white p-6 shadow-sm sm:p-8">
+          <Reveal delay={0.1} className="flex h-full flex-col">
+            <div className="flex flex-1 flex-col rounded-2xl border border-navy/8 bg-white p-6 shadow-sm sm:p-8">
               {status === 'success' ? (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -152,7 +173,6 @@ export function Contact() {
                       onChange={handleChange}
                       className={cn(inputClasses, 'appearance-none')}
                     >
-                      <option>Book a Demo</option>
                       <option>General Inquiry</option>
                       <option>Partnership</option>
                       <option>Support</option>

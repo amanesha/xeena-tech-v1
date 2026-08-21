@@ -7,7 +7,6 @@ import { Integrations } from '../components/sections/Integrations'
 import { Industries } from '../components/sections/Industries'
 import { FinancialSolutions } from '../components/sections/FinancialSolutions'
 import { Security } from '../components/sections/Security'
-import { Ecosystem } from '../components/sections/Ecosystem'
 import { FAQ } from '../components/sections/FAQ'
 import { FinalCTA } from '../components/sections/FinalCTA'
 
@@ -32,7 +31,6 @@ export function Home() {
       <Industries />
       <FinancialSolutions />
       <Security />
-      <Ecosystem />
       <FAQ />
       <FinalCTA />
     </>

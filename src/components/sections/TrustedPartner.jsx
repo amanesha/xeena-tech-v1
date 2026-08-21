@@ -37,12 +37,12 @@ export function TrustedPartner() {
         />
 
         <StaggerGroup className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((f, i) => (
+          {features.map((f) => (
             <StaggerItem key={f.title}>
-              <Card className="h-full" index={i}>
-                <IconBadge icon={f.icon} index={i} />
-                <h3 className="mt-4 text-base font-semibold text-navy">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{f.desc}</p>
+              <Card className="h-full">
+                <IconBadge icon={f.icon} />
+                <h3 className="mt-4 text-base font-bold text-white">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">{f.desc}</p>
               </Card>
             </StaggerItem>
           ))}

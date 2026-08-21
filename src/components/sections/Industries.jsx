@@ -2,7 +2,7 @@ import { Rocket, Building2, Store, Briefcase, Landmark } from 'lucide-react'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Card, IconBadge } from '../ui/Card'
 import { StaggerGroup, StaggerItem } from '../ui/Reveal'
-import { cn } from '../../lib/cn'
+import back2 from '../../assets/back2.png'
 
 const industries = [
   {
@@ -34,30 +34,34 @@ const industries = [
 
 export function Industries() {
   return (
-    <section className="bg-offwhite py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section
+      className="relative bg-navy bg-cover bg-center py-24"
+      style={{ backgroundImage: `url(${back2})` }}
+    >
+      <div className="absolute inset-0 bg-navy/95" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
+          dark
           eyebrow="Industries We Serve"
           title="Technology for Every Kind of Business."
         />
 
-        <StaggerGroup className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {industries.map((ind, i) => {
-            const isLast = i === industries.length - 1
-            return (
-              <StaggerItem key={ind.title} className={isLast ? 'lg:col-span-4' : ''}>
-                <Card className={cn('h-full', isLast && 'lg:flex lg:items-center lg:gap-6')} index={i}>
-                  <IconBadge icon={ind.icon} index={i} />
-                  <div>
-                    <h3 className={cn('mt-4 text-base font-semibold text-navy', isLast && 'lg:mt-0')}>
-                      {ind.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">{ind.desc}</p>
-                  </div>
-                </Card>
-              </StaggerItem>
-            )
-          })}
+        <StaggerGroup className="mt-14 flex flex-wrap justify-center gap-5">
+          {industries.map((ind) => (
+            <StaggerItem
+              key={ind.title}
+              className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
+            >
+              <Card className="h-full">
+                <IconBadge icon={ind.icon} />
+                <div>
+                  <h3 className="mt-4 text-base font-bold text-white">{ind.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">{ind.desc}</p>
+                </div>
+              </Card>
+            </StaggerItem>
+          ))}
         </StaggerGroup>
       </div>
     </section>

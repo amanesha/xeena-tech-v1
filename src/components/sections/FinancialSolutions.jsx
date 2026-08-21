@@ -1,8 +1,7 @@
 import { Wallet, ArrowLeftRight, CreditCard, Coins, ArrowUpRight } from 'lucide-react'
 import { Reveal, StaggerGroup, StaggerItem } from '../ui/Reveal'
 import { Button } from '../ui/Button'
-import { getAccent } from '../../lib/accents'
-import { cn } from '../../lib/cn'
+import { Card, IconBadge } from '../ui/Card'
 
 const highlights = [
   {
@@ -29,14 +28,15 @@ const highlights = [
 
 export function FinancialSolutions() {
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <Reveal className="relative overflow-hidden rounded-2xl bg-navy p-8 sm:p-12 lg:p-16">
-          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold/[0.06] blur-[100px]" />
+    <section className="relative overflow-hidden bg-navy py-24">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold/[0.06] blur-[100px]" />
+      <div className="pointer-events-none absolute -bottom-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/[0.06] blur-[100px]" />
 
-          <div className="relative grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <Reveal>
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+              <span className="mb-1 block text-sm font-semibold uppercase tracking-widest text-gold">
                 Financial Solutions by Xeena
               </span>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -59,31 +59,21 @@ export function FinancialSolutions() {
               <div className="mt-8">
                 <Button href="https://xeena.io" target="_blank" variant="primary">
                   Explore &amp; Learn More
-                  <ArrowUpRight size={16} />
+                  <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Button>
               </div>
             </div>
 
             <StaggerGroup className="grid gap-4 sm:grid-cols-2">
-              {highlights.map((h, i) => {
-                const a = getAccent(i)
-                return (
-                  <StaggerItem key={h.title}>
-                    <div
-                      className={cn(
-                        'h-full rounded-2xl border border-white/10 bg-navy-light p-5 transition-colors',
-                        a.dark.border
-                      )}
-                    >
-                      <span className={cn('flex h-10 w-10 items-center justify-center rounded-lg', a.dark.iconBg, a.dark.iconText)}>
-                        <h.icon size={20} />
-                      </span>
-                      <h3 className="mt-3 text-sm font-semibold text-white">{h.title}</h3>
-                      <p className="mt-1.5 text-xs leading-relaxed text-white/60">{h.desc}</p>
-                    </div>
-                  </StaggerItem>
-                )
-              })}
+              {highlights.map((h) => (
+                <StaggerItem key={h.title}>
+                  <Card className="p-5">
+                    <IconBadge icon={h.icon} />
+                    <h3 className="mt-3 text-sm font-bold text-white">{h.title}</h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-white/60">{h.desc}</p>
+                  </Card>
+                </StaggerItem>
+              ))}
             </StaggerGroup>
           </div>
         </Reveal>

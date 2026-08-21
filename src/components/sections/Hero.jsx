@@ -1,10 +1,22 @@
 import { motion } from 'motion/react'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { Button } from '../ui/Button'
+import heroVideo from '../../assets/hero_video.mp4'
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-navy/80" />
+
       {/* ambient glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-gold/[0.07] blur-[120px]" />
 
@@ -19,7 +31,7 @@ export function Hero() {
             The technology arm of Xeena
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
             Technology That Powers <span className="text-gold">Modern Business.</span>
           </h1>
 
@@ -33,7 +45,7 @@ export function Hero() {
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button to="/contact" variant="primary">
               Book a Demo
-              <ArrowRight size={16} />
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
             <Button href="#solutions" variant="outlineLight">
               Explore Solutions

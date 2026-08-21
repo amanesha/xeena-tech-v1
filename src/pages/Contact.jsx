@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { CheckCircle2, Clock, MessagesSquare, ShieldCheck } from 'lucide-react'
 import { Reveal } from '../components/ui/Reveal'
 import { cn } from '../lib/cn'
-import { getAccent } from '../lib/accents'
+import { Card, IconBadge } from '../components/ui/Card'
 
 const reasons = [
   {
@@ -56,7 +56,7 @@ export function Contact() {
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/10 px-4 py-1.5 text-xs font-semibold text-gold">
             Contact Xeena Tech
           </span>
-          <h1 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
             Let&apos;s Build Something Great Together.
           </h1>
           <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
@@ -69,25 +69,17 @@ export function Contact() {
       <section className="bg-offwhite py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-16 lg:px-8">
           <Reveal>
-            <h2 className="text-xl font-semibold text-navy">Why reach out</h2>
+            <h2 className="text-xl font-bold text-navy">Why reach out</h2>
             <div className="mt-6 space-y-4">
-              {reasons.map((r, i) => {
-                const a = getAccent(i)
-                return (
-                  <div
-                    key={r.title}
-                    className="flex items-start gap-4 rounded-2xl border border-navy/8 bg-white p-5"
-                  >
-                    <span className={cn('flex h-10 w-10 shrink-0 items-center justify-center rounded-lg', a.light.iconBg, a.light.iconText)}>
-                      <r.icon size={20} />
-                    </span>
-                    <div>
-                      <h3 className="text-sm font-semibold text-navy">{r.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-muted">{r.desc}</p>
-                    </div>
+              {reasons.map((r) => (
+                <Card key={r.title} className="flex flex-row items-start gap-4 p-5">
+                  <IconBadge icon={r.icon} />
+                  <div>
+                    <h3 className="text-sm font-bold text-white">{r.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-white/70">{r.desc}</p>
                   </div>
-                )
-              })}
+                </Card>
+              ))}
             </div>
           </Reveal>
 
@@ -176,7 +168,7 @@ export function Contact() {
                     disabled={status === 'submitting'}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full rounded-lg bg-gold px-6 py-3.5 text-sm font-semibold text-navy transition-colors hover:bg-gold-hover disabled:opacity-60"
+                    className="w-full rounded-full bg-gradient-to-r from-gold-light to-gold px-6 py-3.5 text-sm font-semibold text-navy shadow-lg shadow-gold/30 transition-all hover:brightness-105 disabled:opacity-60"
                   >
                     {status === 'submitting' ? 'Sending...' : 'Send Message'}
                   </motion.button>

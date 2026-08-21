@@ -4,11 +4,12 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { cn } from '../../lib/cn'
+import logo from '../../assets/xeena-logo.png'
 
 const navLinks = [
   { label: 'Home', hash: '/' },
   { label: 'Solutions', hash: '/#solutions' },
-  { label: 'Partners', hash: '/#partners' },
+  { label: 'Contact', hash: '/contact' },
 ]
 
 export function Navbar() {
@@ -44,20 +45,22 @@ export function Navbar() {
   }
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
       className={cn(
-        'sticky top-0 z-50 transition-all duration-300',
-        scrolled ? 'bg-navy border-b border-white/10' : 'bg-navy'
+        'fixed inset-x-0 top-0 z-50 transition-all duration-500 backdrop-blur-xl',
+        scrolled ? 'bg-navy/95 border-b border-white/10 shadow-lg shadow-black/20' : 'bg-white/[0.03]'
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold text-base font-extrabold text-navy">
-            X
-          </span>
-          <span className="text-lg font-bold tracking-tight text-white">
-            Xeena <span className="font-normal text-white/60">Tech</span>
-          </span>
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
+        <Link to="/" className="flex items-center group">
+          <img
+            src={logo}
+            alt="Xeena Tech"
+            className="h-20 w-auto object-contain transition-opacity group-hover:opacity-90"
+          />
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
@@ -66,17 +69,15 @@ export function Navbar() {
               key={link.label}
               href={link.hash}
               onClick={(e) => handleNavClick(e, link.hash)}
-              className="text-sm font-medium text-white/75 transition-colors hover:text-gold"
+              className="group relative text-sm font-medium text-white/75 transition-colors hover:text-gold"
             >
               {link.label}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button to="/contact" variant="outlineLight" className="px-5 py-2.5">
-            Contact us
-          </Button>
           <Button to="/contact" variant="primary" className="px-5 py-2.5">
             Book a Demo
           </Button>
@@ -113,9 +114,6 @@ export function Navbar() {
                 </a>
               ))}
               <div className="mt-3 flex flex-col gap-2">
-                <Button to="/contact" variant="outlineLight" className="w-full">
-                  Contact us
-                </Button>
                 <Button to="/contact" variant="primary" className="w-full">
                   Book a Demo
                 </Button>
@@ -124,6 +122,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   )
 }

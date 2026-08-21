@@ -3,8 +3,6 @@ import { ChevronDown } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Reveal } from '../ui/Reveal'
-import { getAccent } from '../../lib/accents'
-import { cn } from '../../lib/cn'
 
 const faqs = [
   {
@@ -55,25 +53,19 @@ export function FAQ() {
         <div className="mt-12 space-y-3">
           {faqs.map((item, i) => {
             const isOpen = openIndex === i
-            const a = getAccent(i)
             return (
               <Reveal key={item.q} delay={i * 0.03}>
-                <div
-                  className={cn(
-                    'overflow-hidden rounded-2xl border-l-4 bg-offwhite',
-                    a.solid.replace('bg-', 'border-l-')
-                  )}
-                >
+                <div className="overflow-hidden rounded-xl border border-gold-dark/50 bg-navy/95 transition-colors duration-300 hover:border-gold/70">
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? -1 : i)}
-                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   >
-                    <span className="text-sm font-semibold text-navy sm:text-base">{item.q}</span>
+                    <span className="font-medium text-white">{item.q}</span>
                     <motion.span
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.25 }}
-                      className={cn('shrink-0', a.light.iconText)}
+                      className="shrink-0 text-white/60"
                     >
                       <ChevronDown size={18} />
                     </motion.span>
@@ -87,7 +79,7 @@ export function FAQ() {
                         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="px-5 pb-4 text-sm leading-relaxed text-muted">{item.a}</p>
+                        <p className="px-6 pb-5 text-sm leading-relaxed text-white/70">{item.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>

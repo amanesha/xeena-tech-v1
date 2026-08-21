@@ -3,6 +3,9 @@ import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
 import { Home } from './pages/Home'
 import { Contact } from './pages/Contact'
+import { CookiePolicy } from './pages/legal/CookiePolicy'
+import { PrivacyPolicy } from './pages/legal/PrivacyPolicy'
+import { TermsOfService } from './pages/legal/TermsOfService'
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
       </main>
       <Footer />

@@ -1,41 +1,46 @@
 import { motion } from 'motion/react'
-import { getAccent } from '../../lib/accents'
+import Tilt from 'react-parallax-tilt'
 import { cn } from '../../lib/cn'
 
-export function Card({ children, className, dark = false, accent = 0, index }) {
-  const a = getAccent(index ?? accent)
-  const tone = dark ? a.dark : a.light
-
+export function Card({ children, className }) {
   return (
-    <motion.div
-      whileHover={{ y: -3 }}
-      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className={cn(
-        'rounded-2xl border p-6 transition-colors duration-200',
-        dark
-          ? cn('border-white/10 bg-white/[0.03]', tone.border)
-          : cn('border-navy/8 bg-white shadow-sm hover:shadow-md', tone.border),
-        className
-      )}
+    <Tilt
+      tiltMaxAngleX={8}
+      tiltMaxAngleY={8}
+      scale={1.02}
+      perspective={900}
+      transitionSpeed={1200}
+      glareEnable
+      glareMaxOpacity={0.18}
+      glareColor="#f0c94a"
+      glarePosition="all"
+      glareBorderRadius="16px"
+      className="h-full rounded-2xl"
     >
-      {children}
-    </motion.div>
+      <div
+        className={cn(
+          'group relative h-full overflow-hidden rounded-2xl border border-gold-dark/50 bg-navy/95 p-6 transition-all duration-500 hover:border-gold/70 hover:shadow-2xl hover:shadow-black/30',
+          className
+        )}
+      >
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 w-1/3 -translate-x-[220%] skew-x-12 bg-gradient-to-r from-transparent via-gold/10 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-[420%]"
+        />
+        <div className="relative">{children}</div>
+      </div>
+    </Tilt>
   )
 }
 
-export function IconBadge({ icon: Icon, dark = false, accent = 0, index, size = 20 }) {
-  const a = getAccent(index ?? accent)
-  const tone = dark ? a.dark : a.light
-
+export function IconBadge({ icon: Icon, size = 20 }) {
   return (
-    <div
-      className={cn(
-        'inline-flex h-10 w-10 items-center justify-center rounded-lg',
-        tone.iconBg,
-        tone.iconText
-      )}
+    <motion.div
+      whileHover={{ rotate: 8, scale: 1.1 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 12 }}
+      className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gold/20 bg-gold/15 text-gold"
     >
       <Icon size={size} strokeWidth={2} />
-    </div>
+    </motion.div>
   )
 }

@@ -1,9 +1,7 @@
 import { Calculator, Users, ShoppingCart, MessageSquare, Cloud, Plug } from 'lucide-react'
 import { SectionHeading } from '../ui/SectionHeading'
+import { Card, IconBadge } from '../ui/Card'
 import { StaggerGroup, StaggerItem } from '../ui/Reveal'
-import { motion } from 'motion/react'
-import { getAccent } from '../../lib/accents'
-import { cn } from '../../lib/cn'
 
 const categories = [
   { icon: Calculator, label: 'Accounting Platforms' },
@@ -28,25 +26,14 @@ export function Integrations() {
         />
 
         <StaggerGroup className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {categories.map((c, i) => {
-            const a = getAccent(i)
-            return (
-              <StaggerItem key={c.label}>
-                <motion.div
-                  whileHover={{ y: -4 }}
-                  className={cn(
-                    'flex h-full flex-col items-center gap-3 rounded-2xl border border-white/10 bg-navy-light p-6 text-center transition-colors',
-                    a.dark.border
-                  )}
-                >
-                  <span className={cn('flex h-10 w-10 items-center justify-center rounded-lg', a.dark.iconBg, a.dark.iconText)}>
-                    <c.icon size={20} />
-                  </span>
-                  <span className="text-xs font-medium leading-snug text-white/80">{c.label}</span>
-                </motion.div>
-              </StaggerItem>
-            )
-          })}
+          {categories.map((c) => (
+            <StaggerItem key={c.label}>
+              <Card className="flex flex-col items-center gap-3 text-center">
+                <IconBadge icon={c.icon} />
+                <span className="text-xs font-medium leading-snug text-white/80">{c.label}</span>
+              </Card>
+            </StaggerItem>
+          ))}
         </StaggerGroup>
       </div>
     </section>

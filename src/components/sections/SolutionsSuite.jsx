@@ -3,8 +3,7 @@ import { SectionHeading } from '../ui/SectionHeading'
 import { Card, IconBadge } from '../ui/Card'
 import { StaggerGroup, StaggerItem } from '../ui/Reveal'
 import { Button } from '../ui/Button'
-import { getAccent } from '../../lib/accents'
-import { cn } from '../../lib/cn'
+import back1 from '../../assets/back1.png'
 
 const solutions = [
   {
@@ -32,12 +31,12 @@ const solutions = [
   {
     icon: Wallet,
     title: 'Payroll & HR Tools',
-    desc: 'Simplify payroll runs, employee records, and team administration through one secure system.',
+    desc: 'Run global payroll with confidence. Automate monthly runs, manage employee records, and pay your team anywhere, all through one secure system.',
     features: [
-      'Automated Payroll Processing',
-      'Employee Records & Documents',
-      'Leave & Attendance Tracking',
-      'Payslip Generation',
+      'Automated Monthly Payroll Runs',
+      'Pay in Fiat or Crypto',
+      'Salaries Fixed in USD, Paid in Any Currency',
+      'Multi-Level Approvals & Roles',
     ],
   },
   {
@@ -72,40 +71,44 @@ const solutions = [
 
 export function SolutionsSuite() {
   return (
-    <section id="solutions" className="scroll-mt-20 bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section
+      id="solutions"
+      className="relative scroll-mt-20 bg-navy bg-cover bg-center py-24"
+      style={{ backgroundImage: `url(${back1})` }}
+    >
+      <div className="absolute inset-0 bg-navy/85" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
+          dark
           eyebrow="Business Solutions Suite"
           title="Every Tool Your Business Needs. One Platform."
           subtitle="From your first customer to your global expansion, Xeena Tech provides the software foundation modern businesses rely on."
         />
 
         <StaggerGroup className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {solutions.map((s, i) => {
-            const accent = getAccent(i)
-            return (
-              <StaggerItem key={s.title}>
-                <Card className="flex h-full flex-col" index={i}>
-                  <IconBadge icon={s.icon} index={i} />
-                  <h3 className="mt-4 text-lg font-semibold text-navy">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
-                  <ul className="mt-5 space-y-2.5">
-                    {s.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-ink/80">
-                        <Check size={16} className={cn('mt-0.5 shrink-0', accent.light.iconText)} />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              </StaggerItem>
-            )
-          })}
+          {solutions.map((s) => (
+            <StaggerItem key={s.title}>
+              <Card className="flex h-full flex-col">
+                <IconBadge icon={s.icon} />
+                <h3 className="mt-4 text-lg font-bold text-white">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/70">{s.desc}</p>
+                <ul className="mt-5 space-y-2.5">
+                  {s.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-white/80">
+                      <Check size={16} className="mt-0.5 shrink-0 text-gold" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            </StaggerItem>
+          ))}
         </StaggerGroup>
 
         <div className="mt-12 flex justify-center">
-          <Button href="#solutions" variant="outline">
-            Explore All Solutions
+          <Button to="/contact" variant="outlineLight">
+            Speak to us
           </Button>
         </div>
       </div>

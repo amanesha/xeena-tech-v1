@@ -17,10 +17,10 @@ export function Security() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            <span className="mb-1 block text-sm font-semibold uppercase tracking-widest text-gold-dark">
               Security &amp; Reliability
             </span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-navy md:text-5xl">
               Enterprise Security. Always On.
             </h2>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-muted sm:text-lg">

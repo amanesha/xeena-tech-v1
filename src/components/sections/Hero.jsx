@@ -17,6 +17,7 @@ export function Hero() {
         <motion.div
           className="absolute inset-0"
           style={{
+            backgroundColor: '#ffffff',
             backgroundImage: `url(${networkImg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'right center',

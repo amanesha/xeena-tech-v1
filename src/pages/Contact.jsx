@@ -32,7 +32,7 @@ export function Contact() {
     name: '',
     email: '',
     company: '',
-    reason: 'General Inquiry',
+    reason: 'Book a Demo',
     message: '',
   })
   const [status, setStatus] = useState('idle')
@@ -53,10 +53,10 @@ export function Contact() {
     <>
       <section className="relative overflow-hidden bg-navy pb-20 pt-32 lg:pb-28 lg:pt-40">
         <div
-          className="absolute inset-x-0 bottom-0 top-[120px] bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${contactHero})` }}
         />
-        <div className="absolute inset-x-0 bottom-0 top-[120px] bg-navy/85" />
+        <div className="absolute inset-0 bg-navy/55" />
         <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-gold/10 blur-[120px]" />
         <Reveal className="relative mx-auto max-w-2xl px-6 text-center lg:px-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/10 px-4 py-1.5 text-xs font-semibold text-gold">
@@ -66,8 +66,8 @@ export function Contact() {
             Let&apos;s Build Something Great Together.
           </h1>
           <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-            Book a demo or speak with our team about your business technology needs. We&apos;ll
-            help you find the right solutions for CRM, invoicing, payroll, and more.
+            Book a demo or speak with our team about banking, cards, crypto payments,
+            tokenization, corporate tools, or a fully managed launch.
           </p>
         </Reveal>
       </section>
@@ -82,8 +82,8 @@ export function Contact() {
                   <div className="flex flex-row items-start gap-4">
                     <IconBadge icon={r.icon} />
                     <div>
-                      <h3 className="text-sm font-bold text-white">{r.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-white/70">{r.desc}</p>
+                      <h3 className="text-sm font-bold text-navy">{r.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted">{r.desc}</p>
                     </div>
                   </div>
                 </Card>
@@ -97,7 +97,7 @@ export function Contact() {
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-muted">E-mail</p>
-                  <p className="mt-0.5 text-sm font-medium text-navy">info@xeena.io</p>
+                  <p className="mt-0.5 text-sm font-medium text-navy">info@xeena.tech</p>
                 </div>
               </div>
               <div className="mt-4 flex items-center gap-4">
@@ -105,8 +105,17 @@ export function Contact() {
                   <Phone size={18} />
                 </span>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">Telephone</p>
-                  <p className="mt-0.5 text-sm font-medium text-navy">+1 (437) 886-1178</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">Office</p>
+                  <p className="mt-0.5 text-sm font-medium text-navy">+971 4 335 8111</p>
+                </div>
+              </div>
+              <div className="mt-4 flex items-center gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold-tint text-gold-hover">
+                  <Phone size={18} />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">Mobile</p>
+                  <p className="mt-0.5 text-sm font-medium text-navy">+971 54 460 8063</p>
                 </div>
               </div>
             </div>
@@ -173,9 +182,13 @@ export function Contact() {
                       onChange={handleChange}
                       className={cn(inputClasses, 'appearance-none')}
                     >
+                      <option>Book a Demo</option>
+                      <option>SaaS Neo-Banking Platform</option>
+                      <option>BaaS on Partner Licenses</option>
+                      <option>Launch & Management Consulting</option>
+                      <option>Financial Provider Scouting</option>
+                      <option>Tailormade Solutions</option>
                       <option>General Inquiry</option>
-                      <option>Partnership</option>
-                      <option>Support</option>
                     </select>
                   </Field>
 

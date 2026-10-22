@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import Tilt from 'react-parallax-tilt'
 import { cn } from '../../lib/cn'
 
-export function Card({ children, className }) {
+export function Card({ children, className, ...props }) {
   return (
     <Tilt
       tiltMaxAngleX={8}
@@ -19,9 +19,10 @@ export function Card({ children, className }) {
     >
       <div
         className={cn(
-          'group relative h-full overflow-hidden rounded-2xl border border-gold-dark/50 bg-navy/95 p-6 transition-all duration-500 hover:border-gold/70 hover:shadow-2xl hover:shadow-black/30',
+          'group relative h-full overflow-hidden rounded-2xl border border-navy/8 bg-card px-8 py-9 shadow-[0_1px_3px_rgba(11,31,58,0.06),0_10px_25px_-12px_rgba(11,31,58,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_12px_32px_-8px_rgba(11,31,58,0.18),0_4px_8px_rgba(11,31,58,0.06)]',
           className
         )}
+        {...props}
       >
         <span
           aria-hidden
@@ -38,7 +39,7 @@ export function IconBadge({ icon: Icon, size = 20 }) {
     <motion.div
       whileHover={{ rotate: 8, scale: 1.1 }}
       transition={{ type: 'spring', stiffness: 300, damping: 12 }}
-      className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gold/20 bg-gold/15 text-gold"
+      className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gold/25 bg-gold/10 text-gold-dark"
     >
       <Icon size={size} strokeWidth={2} />
     </motion.div>

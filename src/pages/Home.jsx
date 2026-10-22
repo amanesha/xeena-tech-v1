@@ -6,10 +6,12 @@ import { SolutionsSuite } from '../components/sections/SolutionsSuite'
 import { Integrations } from '../components/sections/Integrations'
 import { Industries } from '../components/sections/Industries'
 import { FinancialSolutions } from '../components/sections/FinancialSolutions'
+import { Services } from '../components/sections/Services'
+import { Consulting } from '../components/sections/Consulting'
+import { Tailormade } from '../components/sections/Tailormade'
+import { Support } from '../components/sections/Support'
 import { Security } from '../components/sections/Security'
-import { FAQ } from '../components/sections/FAQ'
 import { FinalCTA } from '../components/sections/FinalCTA'
-import back2 from '../assets/back2.png'
 
 export function Home() {
   const location = useLocation()
@@ -28,16 +30,14 @@ export function Home() {
       <Hero />
       <TrustedPartner />
       <SolutionsSuite />
-      <div className="relative overflow-hidden bg-navy bg-cover bg-center" style={{ backgroundImage: `url(${back2})` }}>
-        <div className="absolute inset-0 bg-navy/95" />
-        <div className="relative">
-          <Integrations />
-          <Industries />
-        </div>
-      </div>
+      <Integrations />
+      <Industries />
       <FinancialSolutions />
+      <Services />
+      <Consulting />
+      <Tailormade />
+      <Support />
       <Security />
-      <FAQ />
       <FinalCTA />
     </>
   )

@@ -7,7 +7,7 @@ export function SectionHeading({ eyebrow, title, subtitle, dark = false, classNa
       {eyebrow && (
         <span
           className={cn(
-            'mb-1 block text-sm font-semibold uppercase tracking-widest',
+            'mb-1 block font-mono text-[11px] font-medium uppercase tracking-[0.22em]',
             dark ? 'text-gold' : 'text-gold-dark'
           )}
         >
@@ -16,7 +16,7 @@ export function SectionHeading({ eyebrow, title, subtitle, dark = false, classNa
       )}
       <h2
         className={cn(
-          'mt-3 text-4xl font-bold leading-tight tracking-tight md:text-5xl',
+          'mt-[18px] text-[clamp(30px,4vw,44px)] font-bold leading-[1.15] tracking-[-0.025em]',
           dark ? 'text-white' : 'text-navy'
         )}
       >
@@ -25,7 +25,7 @@ export function SectionHeading({ eyebrow, title, subtitle, dark = false, classNa
       {subtitle && (
         <p
           className={cn(
-            'mt-4 text-base leading-relaxed sm:text-lg',
+            'mt-[18px] text-[clamp(15px,1.1vw,17px)] leading-[1.65]',
             dark ? 'text-white/70' : 'text-muted'
           )}
         >

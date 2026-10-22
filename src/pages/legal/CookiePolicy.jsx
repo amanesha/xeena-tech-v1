@@ -290,8 +290,8 @@ Nothing in this Cookie Policy is intended to exclude or limit any rights that ca
 
 export function CookiePolicy() {
   return (
-    <LegalPageLayout title="Cookie Policy" effectiveDate="19 August 2026">
-      <LegalContent text={CONTENT} />
+    <LegalPageLayout title="Cookie Policy" effectiveDate="19 August 2026" light>
+      <LegalContent text={CONTENT} light />
     </LegalPageLayout>
   )
 }

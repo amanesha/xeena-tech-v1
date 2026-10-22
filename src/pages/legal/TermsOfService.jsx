@@ -557,8 +557,8 @@ Business Address: MONTANA Building AL KARAMA, Plot 404 - DUBAI, United Arab Emir
 
 export function TermsOfService() {
   return (
-    <LegalPageLayout title="Terms of Service" effectiveDate="19 August 2026">
-      <LegalContent text={CONTENT} />
+    <LegalPageLayout title="Terms of Service" effectiveDate="19 August 2026" light>
+      <LegalContent text={CONTENT} light />
     </LegalPageLayout>
   )
 }

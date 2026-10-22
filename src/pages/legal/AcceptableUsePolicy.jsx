@@ -483,8 +483,8 @@ Nothing in this AUP is intended to exclude or limit rights or obligations that c
 
 export function AcceptableUsePolicy() {
   return (
-    <LegalPageLayout title="Acceptable Use Policy" effectiveDate="20 August 2026">
-      <LegalContent text={CONTENT} />
+    <LegalPageLayout title="Acceptable Use Policy" effectiveDate="20 August 2026" light>
+      <LegalContent text={CONTENT} light />
     </LegalPageLayout>
   )
 }

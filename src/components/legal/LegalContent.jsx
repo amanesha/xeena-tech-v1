@@ -63,10 +63,11 @@ function isListCloser(block) {
   return !block.includes('\n') && block.length <= 160 && /\.$/.test(block)
 }
 
-function renderBody(body) {
+function renderBody(body, light) {
   const blocks = toBlocks(body)
   const nodes = []
   let run = []
+  const textCls = light ? 'text-muted' : 'text-white/60'
 
   const flushRun = () => {
     if (run.length === 0) return
@@ -74,7 +75,7 @@ function renderBody(body) {
       nodes.push(
         <ul key={`ul-${nodes.length}`} className="list-disc space-y-1.5 pl-5">
           {run.map((item, j) => (
-            <li key={j} className="text-sm leading-relaxed text-white/60">
+            <li key={j} className={`text-sm leading-relaxed ${textCls}`}>
               {item}
             </li>
           ))}
@@ -82,7 +83,7 @@ function renderBody(body) {
       )
     } else {
       nodes.push(
-        <p key={`p-${nodes.length}`} className="text-sm leading-relaxed text-white/60">
+        <p key={`p-${nodes.length}`} className={`text-sm leading-relaxed ${textCls}`}>
           {run[0]}
         </p>
       )
@@ -99,7 +100,7 @@ function renderBody(body) {
     } else {
       flushRun()
       nodes.push(
-        <p key={`p-${nodes.length}`} className="whitespace-pre-line text-sm leading-relaxed text-white/60">
+        <p key={`p-${nodes.length}`} className={`whitespace-pre-line text-sm leading-relaxed ${textCls}`}>
           {block}
         </p>
       )
@@ -110,7 +111,7 @@ function renderBody(body) {
   return nodes
 }
 
-export function LegalContent({ text }) {
+export function LegalContent({ text, light }) {
   const sections = parseSections(text.trim())
 
   return (
@@ -118,15 +119,15 @@ export function LegalContent({ text }) {
       {sections.map((section, i) => {
         const body = section.body.join('\n').replace(/\n{3,}/g, '\n\n').trim()
         const HeadingTag = section.level === 3 ? 'h3' : 'h2'
-        const bodyNodes = body ? renderBody(body) : null
+        const bodyNodes = body ? renderBody(body, light) : null
         return (
           <div key={i}>
             {section.title && (
               <HeadingTag
                 className={
                   section.level === 3
-                    ? 'text-base font-medium text-white'
-                    : 'border-b border-white/10 pb-3 text-xl font-semibold text-white'
+                    ? `text-base font-medium ${light ? 'text-navy' : 'text-white'}`
+                    : `border-b pb-3 text-xl font-semibold ${light ? 'border-navy/8 text-navy' : 'border-white/10 text-white'}`
                 }
               >
                 {section.number ? `${section.number}. ` : ''}

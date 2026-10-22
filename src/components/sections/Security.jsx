@@ -5,29 +5,30 @@ import { Reveal, StaggerGroup, StaggerItem } from '../ui/Reveal'
 import securityLottie from '../../assets/pW2HrfBahk.lottie'
 
 const items = [
-  'Data Encryption',
-  'Secure Cloud Infrastructure',
-  'Role-Based Access Controls',
+  'Regulated Partner Network',
+  'Security Architecture',
+  'Compliance Built In',
+  'Operational Resilience',
   'Continuous Monitoring',
-  'Regular Backups',
   '99.9% Uptime Commitment',
 ]
 
 export function Security() {
   return (
-    <section className="bg-offwhite py-24">
+    <section id="trust" className="scroll-mt-20 bg-offwhite py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <span className="mb-1 block text-sm font-semibold uppercase tracking-widest text-gold-dark">
-              Security &amp; Reliability
+              Trust &amp; Compliance
             </span>
             <h2 className="mt-3 text-4xl font-bold tracking-tight text-navy md:text-5xl">
-              Enterprise Security. Always On.
+              Compliance isn&apos;t a feature here. It&apos;s the foundation.
             </h2>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-              Your business data deserves the highest level of protection. Xeena Tech is built on
-              secure, resilient infrastructure with intelligent monitoring at every layer.
+              Every regulated activity on the platform — card issuing, crypto-asset services,
+              tokenization — runs through licensed partner institutions, with security and
+              monitoring built into every layer.
             </p>
 
             <StaggerGroup className="mt-8 grid gap-3 sm:grid-cols-2">

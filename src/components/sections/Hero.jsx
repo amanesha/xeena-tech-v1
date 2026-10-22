@@ -23,8 +23,8 @@ export function Hero() {
             backgroundPosition: 'right center',
             backgroundRepeat: 'no-repeat',
           }}
-          initial={{ scale: 1.12 }}
-          animate={{ scale: [1.12, 1.02, 1.12] }}
+          initial={{ scale: 1.06 }}
+          animate={{ scale: [1.06, 1.01, 1.06] }}
           transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>

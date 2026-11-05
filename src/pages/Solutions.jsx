@@ -56,8 +56,12 @@ export function Solutions() {
             subtitle="Every solution stands on its own, but they're designed to compose. Most Xeena Tech clients start with one, add a second within six months, and end up running the full stack because every layer talks natively to the others."
           />
           <div className="relative mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary">
+            {/* <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary">
               Book a Demo
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Button> */}
+            <Button href="https://wallet.yobpay.io/demo?brand=xeena&source=xeena-tech" target="_blank" variant="primary">
+              Explore Demo
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
             <Button to="/contact" variant="outlineLight">

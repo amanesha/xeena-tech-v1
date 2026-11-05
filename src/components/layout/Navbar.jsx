@@ -96,8 +96,11 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary" className="px-5 py-2.5 text-sm">
+          {/* <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary" className="px-5 py-2.5 text-sm">
             Book a Demo
+          </Button> */}
+          <Button href="https://wallet.yobpay.io/demo?brand=xeena&source=xeena-tech" target="_blank" variant="primary" className="px-5 py-2.5 text-sm">
+            Explore Demo
           </Button>
         </div>
 
@@ -132,8 +135,11 @@ export function Navbar() {
                 </a>
               ))}
               <div className="mt-3 flex flex-col gap-2">
-                <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary" className="w-full text-xs">
+                {/* <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary" className="w-full text-xs">
                   Book a Demo
+                </Button> */}
+                <Button href="https://wallet.yobpay.io/demo?brand=xeena&source=xeena-tech" target="_blank" variant="primary" className="w-full text-xs">
+                  Explore Demo
                 </Button>
               </div>
             </div>

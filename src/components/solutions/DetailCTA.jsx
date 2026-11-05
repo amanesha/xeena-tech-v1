@@ -21,8 +21,12 @@ export function DetailCTA({ slug, titleLower }) {
             combination of software, partner rails, and services.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary">
+            {/* <Button href="https://calendly.com/marketing-xeenaio/30min" target="_blank" variant="primary">
               Book a Demo
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Button> */}
+            <Button href="https://wallet.yobpay.io/demo?brand=xeena&source=xeena-tech" target="_blank" variant="primary">
+              Explore Demo
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
             <Button to="/contact" variant="outlineLight">

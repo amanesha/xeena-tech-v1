@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: 'How do I get started or book a demo?',
-    a: 'Use the "Book a Demo" button anywhere on this page, or head to our Contact page to speak with our team directly.',
+    a: 'Use the "Explore Demo" button anywhere on this page, or head to our Contact page to speak with our team directly.',
   },
 ]
 
